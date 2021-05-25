@@ -25,3 +25,4 @@
 - **Memory Component** also called **Variable environment**.
 - **Code Component** also called **Thread of Execution**.
 - If we run the JS program, then **Execution context** will be created.
+- Execution context created in two phases => **Memory creation** and **Code execution** phase.
