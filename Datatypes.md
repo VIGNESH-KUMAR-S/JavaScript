@@ -23,7 +23,7 @@
         - `+Infinity`
         - `-Infinity`
         - `NaN (Not-a-Number)`
-    - Examples :
+    - **Example**
 
         ```js 
         10/0        //+Infinity
