@@ -1,7 +1,19 @@
 # Hoisting 
 - >**Hoisting** is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
 
-- >**Hoisting** moved only declarations not initializations.
+- Which means,
+    ```js
+      console.log(a);
+      var a = 'Hoisting';
+    ```
+    the above is interpreted as this:
+    ```js
+      var a;
+      console.log(a);
+      var a = 'Hoisting';
+    ```
+
+- >Since, **Hoisting** moved only declarations not initializations.
 
 - When JS program runs, a **`Global execution context`** created in the `call stack` area.
 
