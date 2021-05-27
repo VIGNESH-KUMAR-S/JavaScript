@@ -5,3 +5,4 @@
 3|Execution process and Call stack|[Execution & Call stack](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Execution%20%26%20Call%20stack.md)|
 |4|Hoisting|[Hoisting](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Hoisting.md)|
 |5|Datatypes|[Datatypes](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Datatypes.md)|
+|6|var, let and const|[var, let and const](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/var%2Clet%2Cconst.md)|
