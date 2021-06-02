@@ -19,9 +19,9 @@
 
 - Whereas, In the first phase of `Global execution context`, the **variable environment** creates memory for all variables and functions in that program.
 
-- At the time of memory creation, `var` variables only are stored with `undefined` and functions are stored with `function body`.(Doubt)
+- At the time of memory creation, all variables stored with `undefined` and functions are stored with `function body`.
 
-- Whereas, `let` and `const` stored their values in **code execution** phase.(Doubt)
+- But,`var` variables only stored in **global** or **function** scope whereas, `let` and `const` stored in **script** or **block** scope.
 
 - Since **code execution** started only after first phase, that's how the variable and functions are hoisted.
 
@@ -42,11 +42,12 @@
   let a=10;   
   ```
 - **let** was introduced in **`ES6`** and doesn't allow the use of undeclared variables, the interpreter explicitly spits out a Reference error.
+- **let** stored in script scope, if variable or function that stored in global scope only hoisted.
 
 - >**We ensure that, we use variable after declaring that.**
 
   ```js
-  let a;   //here `undefined` is stored in code execution phase only (Doubt)
+  let a;   //here `undefined` is stored in script scope
   console.log(a);   //undefined
   a=10;   //'a' initialized with 10
   console.log(a);   //10
@@ -86,30 +87,29 @@
 1. 
     ```js
       function foo() {
-      function bar() {
-          console.log("hlo");
-          return 3;
-      }    
-      return bar();
-      function bar() {
-          return 8;    
-      }
+          function bar() {
+              console.log("hlo");
+              return 3;
+          }    
+          return bar();
+          function bar() {
+              return 8;    
+          }
       }
       console.log(foo());
     ```
     Above code internally reconstructed to :
     ```js
       function foo() {
-      function bar() {
-          return 8;    
-      }
-      return bar();
-      
+          function bar() {
+              return 8;    
+          }
+          return bar();
       }
       console.log(foo());
     ```
 
-    - In **JavaScript** if we write same name and same argument with different functions, then it's **Function Overriding**.
+    - In **JavaScript** if we write same name and same or different argument with different functions, then it's **Function Overriding**.
     - Based on hoisting the two `bar()` functions will be moved to the top of their scope.
     - After that the first one will be deleted. Which means last function only presents, all other functions are deleted.
 
@@ -119,12 +119,12 @@
     ```js
       var a = 1;
       function b() {  
-      console.log(typeof a);  //function
-      a = 10;
-      console.log(a);  //10
-      console.log(typeof a);  //number
-      return;
-      function a() {};
+          console.log(typeof a);  //function
+          a = 10;
+          console.log(a);  //10
+          console.log(typeof a);  //number
+          return;
+          function a() {};
       }
       b();
       console.log(a); //1
@@ -135,26 +135,27 @@
       var a;
       a=1;
       function b() {  
-      function a();
-      console.log(typeof a);  //function
-      a = 10;
-      console.log(a);  //10
-      console.log(typeof a);  //number
-      return;
-      function a() {};
+          function a();
+          console.log(typeof a);  //function
+          a = 10;
+          console.log(a);  //10
+          console.log(typeof a);  //number
+          return;
+          function a() {};
       }
       b();
       console.log(a); //1
     ```
+    - Variable and functions with same name, so that function replaced variable.
     - Since, `'a'` in `function b()` acting as inner function. But at the time of **code execution** the `typeof` **a** changed to `number`.
 
 3.
     ```js
         var myVar = 'foo';
         (function() {  
-        console.log('Original value was: ' + myVar);
-        var myVar = 'bar';  
-        console.log('New value is: ' + myVar);
+            console.log('Original value was: ' + myVar);
+            var myVar = 'bar';  
+            console.log('New value is: ' + myVar);
         })();
     ```
     Based on hoisting :
@@ -162,10 +163,10 @@
         var myVar;
         myVar = 'foo';
         (function() {  
-        var myVar;
-        console.log('Original value was: ' + myVar);
-        myVar = 'bar';  
-        console.log('New value is: ' + myVar);
+            var myVar;
+            console.log('Original value was: ' + myVar);
+            myVar = 'bar';  
+            console.log('New value is: ' + myVar);
         })();
     ```
     - Here, inside the function there is **`var` myVar** variable which will be hoisted to the top of that function.
@@ -183,11 +184,10 @@
     var a=10;
     console.log(typeof a);  //number
     ```
-   - If `var` variable and `function declaration` have same identifiers, then **`Memory creation phase`** consider that as a function and creates memory for that. (Doubt)
+   - If `var` variable and `function declaration` have same identifiers, then **`Memory creation phase`** consider that as a function and creates memory for that. 
 
 
->**Note :** **`let`** and **`const`** variable declarations also hoisted, But **`undefined`** is not assigned to it.
-
+>**Note :** **`let`** and **`const`** variable declarations also hoisted, But their scope is not in **window** object.
 
     
 ## Hoisting in Function Expression and in Arrow function
