@@ -10,7 +10,7 @@
 
 - In **JS**, `function` are treated as a mini program. So that for every function call the seperate **Execution context** will be created in the **Call Stack**.
 
-- The created **Execution context** will be popped in the **Call Stack** when the **Code execution phase** execute the **`return `** statement.
+- The created **Execution context** will be popped in the **Call Stack** when the **Code execution phase** execute the **`return `** statement or program ends.
 
 - Finally, if **JS** program ends, the **Global Execution context** also popped in that **Call Stack**.
 
@@ -89,7 +89,7 @@
       
       |Memory Component|Code Component|
       |---|---|
-      |n : undefined|
+      |n : 2|
       |double : {..body..}|
       |double1 : 4|
       |double2 : undefined|
@@ -104,7 +104,7 @@
 
   |Memory Component|Code Component|
   |---|---|
-  |n : undefined|
+  |n : 2|
   |double : {..body..}|
   |double1 : 4|
   |double2 : 16|
