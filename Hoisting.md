@@ -21,7 +21,7 @@
 
 - At the time of memory creation, all variables stored with `undefined` and functions are stored with `function body`.
 
-- But,`var` variables only stored in **global** or **function** scope whereas, `let` and `const` stored in **script** or **block** scope.
+- But,`var` variables only stored in **global** or **function** scope whereas, `let` and `const` stored in **script** or **block** or other scope.
 
 - Since **code execution** started only after first phase, that's how the variable and functions are hoisted.
 
