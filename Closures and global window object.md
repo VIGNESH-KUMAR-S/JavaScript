@@ -21,7 +21,7 @@
       console.log(this.a);    //10
     ```
     
-- Infront of `a`, if there is nothing then JS engine consider that as a global space.
+- Infront of `a`, if there is nothing then JS engine consider that as (`window.a`) a global space.
 
 - **window** represents global object only.
 
