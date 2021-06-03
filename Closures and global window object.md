@@ -72,6 +72,9 @@
   ![](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Images/function-execution-context-1.gif?raw=true)
   
   **Nested loops**
+  - When a function is defined in another function, the inner function has access to the outer function’s variables. This behavior is called **lexical scoping**.
+
+
   ![](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Images/javascript-execution-stack.gif?raw=true)
   
   - If the JavaScript engine can’t find a variable local to the function’s Execution Context, it’ll look to to nearest parent Execution Context for that variable.
