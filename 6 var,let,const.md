@@ -68,3 +68,18 @@ These three are used to create datatypes.
 - **`var`** variables can be updated and re-declared within its scope; **`let`** variables can be updated but not re-declared; **`const`** variables can neither be updated nor re-declared.
 - They are all hoisted to the top of their scope. But while **`var`** variables are initialized with `undefined`, *`let`** and **`const`** variables are not initialized.
 - While **`var`** and **`let`** can be declared without being initialized, **`const`** must be initialized during declaration.
+- **var VS let VS const**
+```
+**var:**
+  function scoped
+  undefined when accessing a variable before it's declared
+
+**let:**
+  block scoped
+  ReferenceError when accessing a variable before it's declared
+
+**const:**
+  block scoped
+  ReferenceError when accessing a variable before it's declared
+  can't be reassigned
+```
