@@ -70,15 +70,14 @@ These three are used to create datatypes.
 - While **`var`** and **`let`** can be declared without being initialized, **`const`** must be initialized during declaration.
 - **var VS let VS const**
 ```
-**var:**
+var:
   function scoped
   undefined when accessing a variable before it's declared
 
-**let:**
+let:
   block scoped
   ReferenceError when accessing a variable before it's declared
-
-**const:**
+const:
   block scoped
   ReferenceError when accessing a variable before it's declared
   can't be reassigned
