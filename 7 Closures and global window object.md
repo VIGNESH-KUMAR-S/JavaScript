@@ -1,8 +1,8 @@
 - Empty file is the shortest JS program, because for this also global execution context will be created.
 
-- Along with global execution context the global object called `**window**` also be created.
+- Along with global execution context the global object called **`window`** also be created.
 
-- Along with these two, `**this**` variable also created and this is same as `**window**`.
+- Along with these two, **`this`** variable also created and this is same as **`window`**.
 
 -  **window** contains lot of functions and variables, these functions and variables created by JS Engine.
 
