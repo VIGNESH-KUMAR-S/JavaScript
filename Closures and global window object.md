@@ -69,4 +69,21 @@
     
   Example of **Function Execution Context**
   
-  ![alt-text](https://ui.dev/post-images/function-execution-context-gif.gif)
+  ![](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Images/function-execution-context-1.gif?raw=true)
+  
+  **Nested loops**
+  ![](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Images/javascript-execution-stack.gif?raw=true)
+  
+  - If the JavaScript engine can’t find a variable local to the function’s Execution Context, it’ll look to to nearest parent Execution Context for that variable.
+  - This lookup chain will continue all the way until the engine reaches the Global Execution Context. 
+  - In that case, if the Global Execution Context doesn’t have the variable, it’ll throw a `Reference Error`.
+
+       ![](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Images/parent-lookup.gif?raw=true.gif)
+        
+  - The child function will still have access to the outer function’s scope, even after the parent function’s Execution Context has been removed from the Execution Stack.
+
+       ![](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Images/closure-scope.gif?raw=true.gif)
+        
+  - Here, the inner function is nested inside of the `makeAdder` function, so inner creates a **Closure** over the `makeAdder` variable environment. Even after the `makeAdder` Execution Environment has been popped off the Execution Stack, because that Closure Scope was created, inner has access to the `x` variable (via the Scope Chain).
+
+
