@@ -15,7 +15,12 @@
       a = 11;
       console.log(a); //11
     
+      const a=undefined;
+      console.log(a);  //undefined
     ```
+- In the last two lines, we explicitly give `undefined` to const though it's work fine it's not good practice.
+- **Actually if variable is not assigned then `undefined` assigns to it , but not for `const` it should declare and initialize at same time**.
+- We have initialize `undefined` also to const variable.
     
 ## not defined
 
