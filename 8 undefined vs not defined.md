@@ -31,3 +31,12 @@
       ;;;;
       console.log(x)  //Error:`x` is not defined
     ```
+    
+- If we want type of undeclared variable in js, then it'll returns `undefined`.
+- Example :
+
+    ```js
+        console.log(typeof undeclaredVariable); //undefined
+        let a = 9;
+        console.log(typeof a);  //Number
+    ```
