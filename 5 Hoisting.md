@@ -42,7 +42,7 @@
   let a=10;   
   ```
 - **let** was introduced in **`ES6`** and doesn't allow the use of undeclared variables, the interpreter explicitly spits out a Reference error.
-- **let** stored in script scope, if variable or function that stored in global scope only hoisted.
+- **let** stored in script scope or some other scope based on user needs.
 
 - >**We ensure that, we use variable after declaring that.**
 
@@ -135,19 +135,19 @@
       var a;
       a=1;
       function b() {  
-          function a();
+          function a() {};
           console.log(typeof a);  //function
           a = 10;
           console.log(a);  //10
           console.log(typeof a);  //number
           return;
-          function a() {};
+      
       }
       b();
       console.log(a); //1
     ```
     - Variable and functions with same name, so that function replaced variable.
-    - Since, `'a'` in `function b()` acting as inner function. But at the time of **code execution** the `typeof` **a** changed to `number`.
+    - At the start of code execution, `'a'` in `function b()` acting as inner function, after executing the line `a=10` the `typeof` **a** changed to `number`.
 
 3.
     ```js
@@ -164,9 +164,9 @@
         myVar = 'foo';
         (function() {  
             var myVar;
-            console.log('Original value was: ' + myVar);
+            console.log('Original value was: ' + myVar);    //undefined
             myVar = 'bar';  
-            console.log('New value is: ' + myVar);
+            console.log('New value is: ' + myVar);          //bar
         })();
     ```
     - Here, inside the function there is **`var` myVar** variable which will be hoisted to the top of that function.
@@ -193,6 +193,8 @@
 ## Hoisting in Function Expression and in Arrow function
 
 - If function is an arrow function or function expression then **Hoisting** won't work.
+- Which means for the above mentioned two functions are created by using variable name only.
+- Since it's also hoisted but in the form of **`variable`**.
 
   ```js 
   console.log(double);  //undefined
