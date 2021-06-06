@@ -10,7 +10,9 @@
 
 - But, for function execution context **window object will not be created**.
 
-- In the global level **this** pointing to the **window**.
+- **window** object created only once at, when the **Global execution context** is created, but we can use it anywhere by using **window**.
+
+- **this** also represents **windows** in global level.
 
 - Example
 
@@ -21,7 +23,9 @@
       console.log(this.a);    //10
     ```
     
-- Infront of `a`, if there is nothing then JS engine consider that as (`window.a`) a global space.
+- This is applicable for `var` type variables only, but not for `let` and `const`.
+- Because `let` and `const` are not stored in `window` object.
+- (Infront of `a`, if there is nothing then JS engine consider that as (`window.a`) a global space.)Doubt
 
 - **window** represents global object only.
 
@@ -77,7 +81,7 @@
 
   ![](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Images/javascript-execution-stack.gif?raw=true)
   
-  - If the JavaScript engine can’t find a variable local to the function’s Execution Context, it’ll look to to nearest parent Execution Context for that variable.
+  - If the JavaScript engine can’t find a variable in that local to the function’s Execution Context, it’ll look to the nearest parent Execution Context for that variable.
   - This lookup chain will continue all the way until the engine reaches the Global Execution Context. 
   - In that case, if the Global Execution Context doesn’t have the variable, it’ll throw a `Reference Error`.
 
@@ -87,6 +91,7 @@
 
        ![](https://github.com/VIGNESH-KUMAR-S/JavaScript/blob/main/Images/closure-scope.gif?raw=true.gif)
         
-  - Here, the inner function is nested inside of the `makeAdder` function, so inner creates a **Closure** over the `makeAdder` variable environment. Even after the `makeAdder` Execution Environment has been popped off the Execution Stack, because that Closure Scope was created, inner has access to the `x` variable (via the Scope Chain).
+  - Here, the `inner` function is nested inside of the `makeAdder` function, so `inner` creates a **Closure** over the `makeAdder` variable environment. Even after the `makeAdder` Execution Environment has been popped off the `Execution Stack`,`inner` access it's parent's variables and functions, because that `Closure Scope` was created.
+  - Since, `inner` has access to the `x` variable (via the Scope Chain).
 
 
