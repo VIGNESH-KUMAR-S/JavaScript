@@ -66,7 +66,9 @@ These three are used to create datatypes.
 
 - **`var`** declarations are globally scoped or function scoped while **`let`** and **`const`** are block scoped.
 - **`var`** variables can be updated and re-declared within its scope; **`let`** variables can be updated but not re-declared; **`const`** variables can neither be updated nor re-declared.
-- They are all hoisted to the top of their scope. But while **`var`** variables are initialized with `undefined`, *`let`** and **`const`** variables are not initialized.
+- They are all hoisted to the top of their scope.
+- **`var`** variables are initialized with `undefined` in **Global** scope
+- **`let`** and **`const`** variables are also initialized with `undefined` but it's available in `Script` or some other scope.
 - While **`var`** and **`let`** can be declared without being initialized, **`const`** must be initialized during declaration.
 - **var VS let VS const**
 ```
