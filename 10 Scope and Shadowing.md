@@ -3,6 +3,7 @@
 - **Scope** is the part of program which tells about an variable or function information.
 - Where the variable's or function's created, where it'll be destroyed.
 - In the program file, in which place only we should use that variable or function.
+- **Where you can access a specific variable or functions in our program**.
 - Types :
     - Block scope
     - Global scope
