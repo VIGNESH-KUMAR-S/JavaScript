@@ -72,7 +72,7 @@ It's look like this
 
 - When a function completes, its execution context is removed from the stack.
 - But its lexical environment may or may not be removed from the memory.
-- It's depending on if that lexical environment is referenced by any other lexical environments in their outer lexical environment property.
+- It's depending on if that *lexical environment is referenced by any other lexical environments in their outer lexical environment property*.
 - If there is any need of the current lexicle environment for the outer lexicle environment or any other lexicle environment then the current lexicle environment not deleted.
 
 ## Lexical Scope 
